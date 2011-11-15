@@ -191,7 +191,7 @@ public class AsyncHttpResponseHandler {
 
 
     // Interface to AsyncHttpRequest
-    void sendResponseMessage(HttpResponse response) {
+    protected void sendResponseMessage(HttpResponse response) {
         StatusLine status = response.getStatusLine();
         if(status.getStatusCode() >= 300) {
             sendFailureMessage(new HttpResponseException(status.getStatusCode(), status.getReasonPhrase()));
